@@ -10,5 +10,11 @@ box-sizing: border-box;
 }
 
 body{
-    background-color: #a8dce9;
+    background-color: #ffffff;
+}
+
+.footer{
+    margin-top: 10px;
+    position: absolute;
+    width: 100%;
 }

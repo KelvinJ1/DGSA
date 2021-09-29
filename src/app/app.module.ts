@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './layout/nav/nav-bar/nav-bar.component';
 import { BannerComponent } from './banner/banner.component';
 import { MainLayaoutComponent } from './layout/main-layaout/main-layaout.component';
 import { FooterComponent } from './layout/nav/footer/footer.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { FooterComponent } from './layout/nav/footer/footer.component';
     NavBarComponent,
     BannerComponent,
     MainLayaoutComponent,
-    FooterComponent
+    FooterComponent,
+    SigninComponent,
+    SignupComponent, 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
