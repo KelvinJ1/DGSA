@@ -15,11 +15,13 @@ body{
     /* set the fixed height of the footer here */
     height: auto;
     background-color: rgb(65, 65, 235, 0.794) ;
+    
 }
 
 .container{
 display: flex;
 flex-direction: row;
+
 font-size:large;
 padding: 20px;
 
@@ -32,9 +34,12 @@ padding: 20px;
 }
 
 a{
-    margin: 5px;
+    
     text-decoration: none;
     color: aliceblue;
+}
+svg{
+    margin: 5px;
 }
 
 .enlaces{
@@ -61,6 +66,7 @@ img{
 padding: 10px;    
 display: flex;
 flex-direction: row;
+flex-flow: wrap;
 }
 
 .listas{
@@ -75,20 +81,23 @@ flex-direction: row;
     font-size:large;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    flex-flow: wrap;
+    justify-content: space-between;
+    
 }
 
-ul{ margin:2px 35px ;
+ul{ margin:10px  ;
     font-weight: bold;
 
 }
 li{
+    margin-bottom: 10px;
     list-style: none;
     text-decoration: none;
     color: aliceblue;
     font-weight: 200;
     
- }
+}
 
 
 .cr{

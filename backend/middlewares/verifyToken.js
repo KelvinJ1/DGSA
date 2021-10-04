@@ -29,8 +29,13 @@ tokenFunctions.verifyToken = async (req, res, next) => {
 
         req.decoded = {
             _id: payload._id,
-            email: payload.email,
-            role: payload.role
+            names: payload.names,
+            lastnames: payload.lastnames,
+            identificacion: payload.identificacion,
+            NumDocumento: payload.NumDocumento,
+            birthdate: payload.birthdate,
+            expeditiondate: payload.expeditiondate,
+            categoria: payload.categoria,
         }
 
         next()

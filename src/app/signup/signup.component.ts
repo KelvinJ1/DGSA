@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../services/auth.service";
+import Swal from 'sweetalert2';
 import { Auth } from 'src/app/models/Auth';
 import { NgForm } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
-import Swal from 'sweetalert2';
 
 
 @Component({
@@ -11,6 +11,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+
+rad="";
+
 
   constructor(public authService: AuthService) { }
 
@@ -50,3 +53,14 @@ export class SignupComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+

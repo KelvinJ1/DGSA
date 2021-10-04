@@ -1,0 +1,10 @@
+.tarjetas{
+width: 90%;
+margin: auto;
+padding: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+flex-flow: wrap;
+
+}

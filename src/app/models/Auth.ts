@@ -1,17 +1,28 @@
 export class Auth {
     //constructor
-    constructor(_id = "", email = "", password = "", role = 0){
+    constructor(_id="",names="", lastnames="",email="",identificacion="",NumDocumento="",birthdate="",expeditiondate="",categoria="" ){
         //inicializa los valores del atributo
         this._id = _id;
+        this.names=names;
+        this.lastnames=lastnames;
         this.email = email;
-        this.password = password;
-        this.role = role;
-        
+        this.identificacion = identificacion;
+        this.NumDocumento = NumDocumento;
+        this.birthdate=birthdate;
+        this.expeditiondate=expeditiondate;
+        this.categoria=categoria;
     }
 
     //atributos -  definicion
     _id:string
+    names:String
+    lastnames:String
     email:string
-    password:string
-    role:number
+    identificacion:String
+    NumDocumento:String
+    birthdate:String
+    expeditiondate:String
+    categoria:String
+   
+   
 }

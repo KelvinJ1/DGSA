@@ -9,20 +9,17 @@ usersControllers.sayHi = async (req, res) => {
 };
 
 usersControllers.signup = async (req, res) => {
-  console.log(req.body)
-  const { email, password, role } = req.body;
-
+  console.log(req.body);
+  const { names, lastnames, email, identificacion, NumDocumento,birthdate,expeditiondate,categoria } = req.body;
+  console.log(names, lastnames, email, identificacion, NumDocumento,birthdate,expeditiondate,categoria);
   const userExists = await User.findOne({ email });
 
   if (userExists) {
     res.status(400).json({ message: "Usuario ya existe!" });
   } else {
-    console.log(role)
-    const newUser = new User({ email, password, role });
+    console.log("Bienvenido "+ names+" "+lastnames)
+    const newUser = new User({ names, lastnames, email, identificacion, NumDocumento,birthdate,expeditiondate,categoria });
     await newUser.save();
-
-    //const token = jwt.sign({_id: newUser._id, email: newUser.email}, "pato")
-
     res.status(201).json({ message: "Usuario creado", newUser });
   }
 };
@@ -48,32 +45,3 @@ usersControllers.signin = async (req, res) => {
 };
 
 module.exports = usersControllers;
-
-/*
-
-usersControllers.signup = async (req, res) => {
-  const { email, password } = req.body;
-
-  const newUser = new User({ email, password });
-
-  await newUser.save();
-
-  const token = jwt.sign({ _id: newUser._id, email: newUser.email }, "pato");
-
-  res.status(201).json({ message: "User has been created", token });
-};
-
-usersControllers.signin = async (req, res) => {
-    const { email, password } = req.body;
-  
-    const user = await User.findOne({email});
-
-    if(!user) return res.status(401).json({ message: "The email not exists" });//correo no encontrado
-    if(user.password !== password) return res.status(401).json({ message: "Wrong password" })
-
-    const token = jwt.sign({ _id: user._id, email: user.email }, "pato");
-
-    res.status(200).json({message: "you are logged in", token})
-  };
-
-*/

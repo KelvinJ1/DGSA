@@ -1,45 +1,106 @@
+<div class="contenedor">
 <div class="container mt-5 d-flex justify-content-center">
     <div class="card w-50 border-0 mt-5">
-      <div class="card-header bg-primary text-white border-0">Registrarse</div>
-      <div class="card-body border-0 shadow">
-        <form #registerForm="ngForm">
+      <div class="card-header  text-white border-0">Registrarse</div>
+      <div class="card-body border-0 shadow ">
+        <form #signUpForm="ngForm">
           <div class="form-group">
+
+            <label for="Nombres">Nombres</label>
+              <input
+              [(ngModel)]="authService.selectedAuth.names"
+                type="text"
+                class="form-control"
+                id="names"
+                name="names"
+                required
+              />  
+
+              <label for="Apellidos">Apellidos</label>
+              <input
+              [(ngModel)]="authService.selectedAuth.lastnames"
+                type="text"
+                class="form-control"
+                id="lastnames"
+                name="lastnames"
+                required
+                minlength="5"
+              />  
               <label for="email">Email</label>
               <input
-                #name="ngModel"
-                [(ngModel)]="authService.selectedAuth.email"
+              [(ngModel)]="authService.selectedAuth.email"
                 type="text"
                 class="form-control"
                 id="email"
                 name="email"
-              />
+                required
+                min="7"
+              />  
             </div>
+
             <div class="form-group">
-              <label for="password">Contraseña</label>
-              <input
-                #name="ngModel"
-                [(ngModel)]="authService.selectedAuth.password"
-                type="password"
+
+              <label for="identificacion">Tipo de documento</label>
+             
+              <select required  [(ngModel)]="authService.selectedAuth.identificacion" class="form-control" name="identificacion" id="identificacion">
+                
+                <option selected>-Seleccionar tipo de documento-</option>
+                <option value="C.C">Cedula de ciudadanía</option>
+                <option value="T.I">Tarjeta de identidad</option>
+                <option value="C.E">Cedula de extranjería</option>
+                <option value="RC">Registro civil</option>
+                <option value="PS">Pasaporte</option>
+
+              </select>
+
+
+              <label for="">Número de documento</label>
+              <input 
+                required
+                [(ngModel)]="authService.selectedAuth.NumDocumento"
+                type="text"
                 class="form-control"
-                id="password"
-                name="password"
+                id="NumDocumento"
+                name="NumDocumento"
+                
               />
             </div>
+
             <div class="form-group">
-              <label for="role">Rol del usuario</label>
+              <label for="birthdate">Fecha de nacimiento</label>
               <input
-                #name="ngModel"
-                [(ngModel)]="authService.selectedAuth.role"
-                type="number"
+                required
+                [(ngModel)]="authService.selectedAuth.birthdate"
+                type="date"
                 class="form-control"
-                id="role"
-                name="role"
-                min="1"
+                id="birthdate"
+                name="birthdate"
+              />
+
+              <label for="birthdate">Fecha de expedición del documento</label>
+              <input
+                required
+                [(ngModel)]="authService.selectedAuth.expeditiondate"
+                type="date"
+                class="form-control"
+                id="expeditiondate"
+                name="expeditiondate"
               />
             </div>
-            <button class="btn btn-success" (click)="signup(registerForm)">Registrarse</button>
+
+            <div  class="form-group">
+              <label class="radlab" for="cotizante">Cotizante</label>
+              <input required [(ngModel)]="authService.selectedAuth.categoria" type="radio"  value="Cotizante" name="categoria" class="radios" id="">
+
+              
+              <label class="radlab" for="beneficiario">Beneficiario</label>
+              <input required [(ngModel)]="authService.selectedAuth.categoria" type="radio" value="Beneficiario" name="categoria" class="radios" id="">
+            </div>
+    
+
+            <button class="btn" (click)="signup(signUpForm)" >Registrarse</button>
         </form>
       </div>
     </div>
   </div>
-  
+</div>
