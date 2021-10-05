@@ -6,5 +6,62 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 flex-flow: wrap;
+}
+
+.main{
+    margin: 30px;
+    padding: 10px;
+    background-color: #ffffff49;
+}
+
+h1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(65, 65, 235, 0.794);
+text-align: center;
+}
+
+.eslogan{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size:x-large;
+}
+
+.imagenes{
+margin: auto;
+
+display: flex;
+flex-direction: row;
+flex-flow: wrap;
+justify-content: center;
+align-items: center;
+}
+
+.normal{
+    margin: 10px 20px;
+}
+
+.mobile{
+    margin: 10px 20px;
+}
+
+.info{
+    margin: 10px 20px;
+}
+
+@media only screen and (max-width: 600px) {  
+    .normal img{
+        width: 320px;
+        height: 202px;  
+    }
+
+    .mobile img{
+        width: 265px;
+        height: 492px;
+    }
+
+    .info img{
+        width: 335px;
+        height: 187px;
+    }
 
 }

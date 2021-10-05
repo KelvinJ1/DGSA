@@ -20,13 +20,26 @@ rad="";
   ngOnInit(): void {
   }
 
+  invalid(){
+
+    Swal.fire(
+      'Error',
+      'Formulario inválido.',
+      'error'
+    )
+  }
+  
+
   signup(userCreated: NgForm){
+    if (userCreated.invalid) {
+      return this.invalid(); 
+    }
     this.authService.signup(userCreated.value).subscribe(
       (res) => {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Usuario creado',
+          title: 'Registro exitoso!',
           showConfirmButton: false,
           timer: 1000
         })
