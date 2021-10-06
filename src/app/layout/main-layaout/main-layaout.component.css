@@ -8,6 +8,13 @@ justify-content: space-between;
 flex-flow: wrap;
 }
 
+.card:hover{
+
+    transform: scale(1.2);
+    
+
+}
+
 .main{
     margin: 30px;
     padding: 10px;

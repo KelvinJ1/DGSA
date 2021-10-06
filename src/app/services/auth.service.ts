@@ -23,10 +23,12 @@ export class AuthService {
     return this.http.post(`${this.URL_API}/auth/signup`, userCreated)
   }
 
+
   signin(userLogged:Auth){
     console.log(`${this.URL_API}/auth/signin`)
     return this.http.post<any>(`${this.URL_API}/auth/signin`, userLogged)
   }
+
 
   loggedIn(){
     //return !!localStorage.getItem('token')
@@ -37,9 +39,10 @@ export class AuthService {
     }
   }
 
+
   logout(){
     localStorage.removeItem('token')
-    this.router.navigate(['/signin'])
+    this.router.navigate(['/'])
   }
 
   getToken(){

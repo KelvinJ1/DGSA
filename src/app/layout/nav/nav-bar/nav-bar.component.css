@@ -2,6 +2,7 @@
 .navbar{ 
     padding:5px 20px ;
     background-color: rgba(65, 65, 235, 0.794);
+    margin-bottom: 20px;
 }
 
 .logo{
@@ -46,11 +47,15 @@ li:hover{
 }
 
 @media only screen and (max-width: 600px) {  
-  
     .logo{
-        width: 290px;
-        height: 55px;
-
+        width: 240px;
+        height: 45px;
     }
+
+    .navbar{ 
+        padding:5px 5px ;
+        background-color: rgba(65, 65, 235, 0.794);
+    }
+
 
 }

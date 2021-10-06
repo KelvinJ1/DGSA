@@ -10,6 +10,7 @@ import { MainLayaoutComponent } from './layout/main-layaout/main-layaout.compone
 import { FooterComponent } from './layout/nav/footer/footer.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { CarnetComponent } from './carnet/carnet.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SignupComponent } from './signup/signup.component';
     MainLayaoutComponent,
     FooterComponent,
     SigninComponent,
-    SignupComponent, 
+    SignupComponent,
+    CarnetComponent, 
   ],
   imports: [
     BrowserModule,

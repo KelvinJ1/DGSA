@@ -26,7 +26,7 @@ usersControllers.signup = async (req, res) => {
 
 usersControllers.signin = async (req, res) => {
   //escribimos en el formulario
-  const { email, password } = req.body;
+  const { email, NumDocumento } = req.body;
 
   //lo que me devuelve la base de datos
   const user = await User.findOne({ email });
@@ -35,11 +35,11 @@ usersControllers.signin = async (req, res) => {
     return res.status(401).json({ message: "Usuario no existe" });
   }
 
-  if (user.password !== password) {
+  if (user.NumDocumento !== NumDocumento) {
     return res.status(401).json({ message: "La contraseña es incorrecta!" });
   }
 
-  const token = jwt.sign({ _id: user._id, email: user.email, role: user.role }, "pato");
+  const token = jwt.sign({ _id: user._id, names: user.names, lastnames: user.lastnames, email: user.email, identificacion: user.identificacion, NumDocumento: user.NumDocumento, birthdate: user.birthdate, expeditiondate: user.expeditiondate, categoria: user.categoria }, "pato");
 
   res.status(200).json({ message: "Tu estas logueado correctamente", token });
 };

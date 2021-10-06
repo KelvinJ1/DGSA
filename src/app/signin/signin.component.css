@@ -1,0 +1,23 @@
+.container{
+    margin-bottom: 90px;
+} 
+
+
+.card-header{
+    background-color: rgb(65, 65, 235, 0.794);
+}
+
+.form-control{
+
+    margin-bottom: 10px;
+    
+    }
+
+.btn{
+    margin-top: 20px;
+    background-color: rgb(65, 65, 235, 0.794);
+    border-color: rgba(41, 101, 233, 0.137);
+    color: aliceblue;
+    font-weight:400;
+    
+    }

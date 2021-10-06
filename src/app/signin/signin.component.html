@@ -1,1 +1,34 @@
-<p>signin works!</p>
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card w-50 border-0 mt-5">
+      <div class="card-header  text-white border-0">Iniciar Sesi&oacute;n</div>
+      <div class="card-body border-0 shadow">
+        <form #loginForm="ngForm">
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                #name="ngModel"
+                [(ngModel)]="authService.selectedAuth.email"
+                type="text"
+                class="form-control"
+                id="email"
+                name="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="identifiacion">No. De documento</label>
+              <input
+                #name="ngModel"
+                [(ngModel)]="authService.selectedAuth.NumDocumento"
+                type="text"
+                class="form-control"
+                id="NumDocumento"
+                name="NumDocumento"
+              />
+            </div>
+            <button class="btn btn-success" (click)="signin(loginForm)">Iniciar Sesi&oacute;n</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+

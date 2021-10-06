@@ -29,6 +29,12 @@ rad="";
     )
   }
   
+  clean(form?: NgForm){
+    if(form) {
+      form.reset()
+      this.authService.selectedAuth = new Auth()
+    }
+  }
 
   signup(userCreated: NgForm){
     if (userCreated.invalid) {
@@ -53,17 +59,11 @@ rad="";
           showConfirmButton: false,
           timer: 1000
         })
-        this.clean(userCreated)
       }
     )
   }
 
-  clean(form?: NgForm){
-    if(form) {
-      form.reset()
-      this.authService.selectedAuth = new Auth()
-    }
-  }
+  
 
 }
 
