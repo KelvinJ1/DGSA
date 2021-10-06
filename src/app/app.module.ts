@@ -11,6 +11,8 @@ import { FooterComponent } from './layout/nav/footer/footer.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { CarnetComponent } from './carnet/carnet.component';
+import { QrCodeModule } from 'ng-qrcode';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,12 @@ import { CarnetComponent } from './carnet/carnet.component';
     FooterComponent,
     SigninComponent,
     SignupComponent,
-    CarnetComponent, 
+    CarnetComponent,
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, HttpClientModule
+    AppRoutingModule, FormsModule, HttpClientModule, QrCodeModule, NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

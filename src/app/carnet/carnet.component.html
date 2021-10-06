@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" id="carnet">
 
-<div class="carnet" id="carnet">
+<div class="carnet" >
     <div class="head">
             <img class="logo" src="../../assets/logo1.png" alt="" srcset="">
             <div class="texto">
@@ -14,43 +14,46 @@
         
         <div class="pic">
         
-            <img class="foto" src="https://img.freepik.com/foto-gratis/retrato-hombre-blanco-aislado_53876-40306.jpg?size=626&ext=jpg&ga=GA1.2.1916928074.1629763200" alt="" srcset="">
+            <img class="foto" src="{{decodeToken().picture}}" alt="" srcset="">
         
         </div>
 
         <div class="info">
+        <div class="juntos">
         <div class="datos">
             <ul>Categoria:
-                <li>Cotizante</li>
+                <li>{{decodeToken().categoria}}</li>
             </ul>
 
             <ul>Nombres:
-                <li>Juan Pablo</li>
+                <li>{{decodeToken().names}}</li>
             </ul>
             <ul>Apellidos:
-                <li>Pérez Zambrano</li>
+                <li>{{decodeToken().lastnames}}</li>
             </ul>
             <ul>Documento:
-                <li>C.C</li>
+                <li>{{decodeToken().identificacion}}</li>
             </ul>
            
         </div>
 
         <div class="datos2">
             <ul>No. Documento:
-                <li>12546984</li>
+                <li>{{decodeToken().NumDocumento}}</li>
             </ul>
             <ul>Fecha de nacimiento:
-                <li>25-05-1993</li>
+                <li>{{decodeToken().birthdate}}</li>
             </ul>
             <ul>Fecha de expedición:
-                <li>07-01-2015</li>
+                <li>{{decodeToken().expeditiondate}}</li>
             </ul>
         </div>
-        <div class="qr">
-            <img src="../../assets/CelularFinal.JPG" alt="" srcset="">
         </div>
 
+        <div class="qr">
+            <qr-code  class="code" value="{{value}}"  size=100 [margin]="0" errorCorrectionLevel="M"></qr-code>
+        </div>
+        
         </div>
     </div>
 
@@ -58,7 +61,7 @@
 
 <div class="boton">
 
-    <button class="btn" (click)="PDF()">Descargar</button>
+    <button class="btn"   (click)="PDF()">Descargar</button>
 
 </div>
 

@@ -3,7 +3,10 @@ import { Auth } from 'src/app/models/Auth';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
+import jwt_decode from 'jwt-decode';
 import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -12,8 +15,20 @@ import { Router } from '@angular/router';
 export class SigninComponent implements OnInit {
   constructor(public authService: AuthService, public router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
+    if (this.authService.loggedIn()) {
+      this.router.navigate(["/home"])
+      
+    }
+
+
+  }
+
+ 
+
+
+ 
   signin(userLogged: NgForm) {
     this.authService.signin(userLogged.value).subscribe(
       (res) => {
@@ -23,7 +38,7 @@ export class SigninComponent implements OnInit {
       },
       (err) => {
         Swal.fire({
-          position: 'center',
+          position: 'top-end',
           icon: 'error',
           title: err.error.message,
           showConfirmButton: false,

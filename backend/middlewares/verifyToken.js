@@ -14,6 +14,9 @@ tokenFunctions.verifyToken = async (req, res, next) => {
         let isBearer = req.headers.authorization.split(' ')[0]
         //Bearer
 
+
+        
+
         let token = req.headers.authorization.split(' ')[1]
         //<token>
 
@@ -31,11 +34,13 @@ tokenFunctions.verifyToken = async (req, res, next) => {
             _id: payload._id,
             names: payload.names,
             lastnames: payload.lastnames,
+            email:payload.email,
             identificacion: payload.identificacion,
             NumDocumento: payload.NumDocumento,
             birthdate: payload.birthdate,
             expeditiondate: payload.expeditiondate,
             categoria: payload.categoria,
+            picture: payload.picture,
         }
 
         next()

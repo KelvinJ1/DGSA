@@ -27,6 +27,8 @@ h1{
 text-align: center;
 }
 
+
+
 .eslogan{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
@@ -55,7 +57,43 @@ align-items: center;
     margin: 10px 20px;
 }
 
+.guia{
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 20px;
+
+}
+
+.video{
+    padding: 10px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 70%;
+    height: auto;
+}
+
+video{
+
+    border-radius: 40px;
+    filter: drop-shadow(15px 10px 15px rgba(141, 141, 141, 0.274));
+
+}
+
 @media only screen and (max-width: 600px) {  
+    .video{
+        padding: 10px;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 20px;
+        width: 100%;
+        height: auto;
+    }
+
     .normal img{
         width: 320px;
         height: 202px;  

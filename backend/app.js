@@ -15,6 +15,5 @@ app.use(cors())
 
 //routes
 app.use('/auth', require('./routes/user.routes'))
-app.use('/menu', require('./routes/menu.routes'))
 
 app.listen(port, () => console.log("App conectada correctamente en el puerto", port))

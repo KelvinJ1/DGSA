@@ -1,6 +1,6 @@
 export class Auth {
     //constructor
-    constructor(_id="",names="", lastnames="",email="",identificacion="",NumDocumento="",birthdate="",expeditiondate="",categoria="" ){
+    constructor(_id="",names="", lastnames="",email="",identificacion="",NumDocumento="",birthdate="",expeditiondate="",categoria="", picture=""){
         //inicializa los valores del atributo
         this._id = _id;
         this.names=names;
@@ -11,6 +11,7 @@ export class Auth {
         this.birthdate=birthdate;
         this.expeditiondate=expeditiondate;
         this.categoria=categoria;
+        this.picture=picture
     }
 
     //atributos -  definicion
@@ -23,6 +24,7 @@ export class Auth {
     birthdate:String
     expeditiondate:String
     categoria:String
+    picture:String
    
    
 }

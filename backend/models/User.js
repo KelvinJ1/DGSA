@@ -9,7 +9,8 @@ const userSchema = new Schema({
     NumDocumento: {type: String, required: true},
     birthdate: {type: String, required: true},
     expeditiondate: {type: String, required: true},
-    categoria: {type: String, required: true}
+    categoria: {type: String, required: true},
+    picture: {type: String, required: true},
     
 },{
     timestamps: true,

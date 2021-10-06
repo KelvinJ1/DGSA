@@ -6,6 +6,18 @@
         <form #signUpForm="ngForm">
           <div class="form-group">
 
+
+            <label for="picture">Imagen de identificación (URL)</label>
+            <input
+              required
+              [(ngModel)]="authService.selectedAuth.picture"
+              type="text"
+              class="form-control"
+              id="picture"
+              name="picture"
+            />
+
+
             <label for="Nombres">Nombres</label>
               <input
               [(ngModel)]="authService.selectedAuth.names"
@@ -86,6 +98,7 @@
                 id="expeditiondate"
                 name="expeditiondate"
               />
+
             </div>
 
             <div  class="form-group">
@@ -104,3 +117,4 @@
     </div>
   </div>
 </div>
+

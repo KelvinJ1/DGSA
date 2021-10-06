@@ -3,7 +3,7 @@ import { AuthService } from "../services/auth.service";
 import Swal from 'sweetalert2';
 import { Auth } from 'src/app/models/Auth';
 import { NgForm } from '@angular/forms';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -15,10 +15,16 @@ export class SignupComponent implements OnInit {
 rad="";
 
 
-  constructor(public authService: AuthService) { }
+
+  constructor(public authService: AuthService, private router:Router) { }
 
   ngOnInit(): void {
+    if (this.authService.loggedIn()) {
+      this.router.navigate(["/home"])
+      
+    }
   }
+
 
   invalid(){
 

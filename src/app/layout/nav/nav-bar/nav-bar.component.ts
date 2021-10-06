@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import Swal from 'sweetalert2';
+import jwt_decode from 'jwt-decode';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -9,10 +10,18 @@ import Swal from 'sweetalert2';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(public authService: AuthService, private router:Router) { }
+  admin=false;
+  constructor(public authService: AuthService, private router:Router) { 
+    
+  }
 
   ngOnInit(): void {
+    
+  
   }
+
+
+ 
 
   alert(){
 
